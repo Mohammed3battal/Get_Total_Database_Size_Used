@@ -1,0 +1,5 @@
+-- Calculate total used space across all databases (in GB)
+SELECT 
+    CONVERT(DECIMAL(10, 2), SUM(size * 8.0) / 1024 / 1024) AS UsedSpaceGB
+FROM 
+    master.sys.master_files;
